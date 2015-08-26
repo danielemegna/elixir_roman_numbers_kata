@@ -1,52 +1,24 @@
 defmodule ElixirRomanNumbersKataTest do
   use ExUnit.Case
 
-  test "should return I with 1" do
-    assertArabicToRoman(1, "I")
-  end
+  @test_cases %{
+    1 => "I",
+    2 => "II",
+    3 => "III",
+    5 => "V",
+    6 => "VI",
+    7 => "VII",
+    10 => "X",
+    12 => "XII",
+    15 => "XV",
+    16 => "XVI",
+    4 => "IV",
+    24 => "XXIV"
+  }
 
-  test "should return II with 2" do
-    assertArabicToRoman(2, "II")
-  end
-
-  test "should return III with 3" do
-    assertArabicToRoman(3, "III")
-  end
-
-  test "should return V with 5" do
-    assertArabicToRoman(5, "V")
-  end
-  
-  test "should return VI with 6" do
-    assertArabicToRoman(6, "VI")
-  end
-
-  test "should return VII with 7" do
-    assertArabicToRoman(7, "VII")
-  end
-  
-  test "should return X with 10" do
-    assertArabicToRoman(10, "X")
-  end
-
-  test "should return XII with 12" do
-    assertArabicToRoman(12, "XII")
-  end
-
-  test "should return XV with 15" do
-    assertArabicToRoman(15, "XV")
-  end
-
-  test "should return XVI with 16" do
-    assertArabicToRoman(16, "XVI")
-  end
-
-  test "should return IV with 4" do
-    assertArabicToRoman(4, "IV")
-  end
-
-  test "should return XXIV with 24" do
-    assertArabicToRoman(24, "XXIV")
+  test "Run all the tests" do
+    for {key, value} <- @test_cases, do:
+      assertArabicToRoman(key, value)
   end
 
   defp assertArabicToRoman(arabic, roman) do
