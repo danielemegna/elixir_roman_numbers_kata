@@ -9,12 +9,12 @@ defmodule Arabic do
 
   def to_roman(n), do: to_roman(n, @dictionary)
 
-  defp to_roman(n, dict = [{arabic, roman} | _]) when n >= arabic do
-    roman <> to_roman(n-arabic, dict)
+  defp to_roman(n, [{arabic, _} | rest]) when n < arabic do
+    to_roman(n, rest)
   end
 
-  defp to_roman(n, [ _ | rest]) do
-    to_roman(n, rest) 
+  defp to_roman(n, dict = [{arabic, roman} | _]) do
+    roman <> to_roman(n-arabic, dict)
   end
 
   defp to_roman(_, []), do: ""
