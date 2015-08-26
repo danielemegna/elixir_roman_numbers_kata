@@ -9,8 +9,8 @@ defmodule Arabic do
 
   def to_roman(n), do: to_roman(n, @dictionary)
 
-  defp to_roman(n, [{arabic, roman} | _]) when n >= arabic do
-    roman <> to_roman(n-arabic, @dictionary)
+  defp to_roman(n, dict = [{arabic, roman} | _]) when n >= arabic do
+    roman <> to_roman(n-arabic, dict)
   end
 
   defp to_roman(n, [ _ | rest]) do
