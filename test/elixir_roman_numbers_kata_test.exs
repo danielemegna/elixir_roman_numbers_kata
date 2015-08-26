@@ -13,4 +13,8 @@ defmodule ElixirRomanNumbersKataTest do
     assert Arabic.to_roman(3) == "III"
   end
 
+  test "should return V with 5" do
+    assert Arabic.to_roman(5) == "V"
+  end
+  
 end
