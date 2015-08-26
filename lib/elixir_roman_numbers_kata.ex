@@ -1,18 +1,22 @@
 defmodule Arabic do
 
-  @dictionary %{
-    1 => "I",
-    4 => "IV",
-    5 => "V",
-    10 => "X",
-  }
+  @dictionary [
+    {10, "X"},
+    {5, "V"},
+    {4, "IV"},
+    {1, "I"},
+  ]
 
-  def to_roman(1), do: @dictionary[1]
-  def to_roman(4), do: @dictionary[4]
-  def to_roman(5), do: @dictionary[5]
-  def to_roman(10), do: @dictionary[10]
-  def to_roman(n) when n > 10,  do: to_roman(10)  <> to_roman(n-10)
-  def to_roman(n) when n > 5,   do: to_roman(5)   <> to_roman(n-5)
-  def to_roman(n) when n > 1,   do: to_roman(1)   <> to_roman(n-1)
+  def to_roman(n), do: to_roman(n, @dictionary)
+
+  defp to_roman(n, [{arabic, roman} | _]) when n >= arabic do
+    roman <> to_roman(n-arabic, @dictionary)
+  end
+
+  defp to_roman(n, [ _ | rest]) do
+    to_roman(n, rest) 
+  end
+
+  defp to_roman(_, []), do: ""
 
 end
