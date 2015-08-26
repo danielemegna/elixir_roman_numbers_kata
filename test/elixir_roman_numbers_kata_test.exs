@@ -37,6 +37,10 @@ defmodule ElixirRomanNumbersKataTest do
     assertArabicToRoman(15, "XV")
   end
 
+  test "should return XVI with 16" do
+    assertArabicToRoman(16, "XVI")
+  end
+
   defp assertArabicToRoman(arabic, roman) do
     assert Arabic.to_roman(arabic) == roman
   end
