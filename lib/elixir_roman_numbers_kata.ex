@@ -1,7 +1,6 @@
 defmodule Arabic do
 
-  def to_roman(3), do: "III"
-  def to_roman(2), do: "II"
-  def to_roman(n), do: "I"
+  def to_roman(1), do: "I"
+  def to_roman(n), do: to_roman(n-1) <> to_roman(1)
 
 end
