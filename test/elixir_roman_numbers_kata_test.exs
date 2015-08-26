@@ -13,7 +13,9 @@ defmodule ElixirRomanNumbersKataTest do
     15 => "XV",
     16 => "XVI",
     4 => "IV",
-    24 => "XXIV"
+    24 => "XXIV",
+    38 => "XXXVIII",
+    39 => "XXXIX",
   }
 
   test "Run all the tests" do
