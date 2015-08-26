@@ -18,6 +18,8 @@ defmodule ElixirRomanNumbersKataTest do
     39 => "XXXIX",
     40 => "XL",
     44 => "XLIV",
+    49 => "XLIX",
+    50 => "L",
   }
 
   test "Run all the tests" do

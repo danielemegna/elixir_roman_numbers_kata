@@ -1,6 +1,7 @@
 defmodule Arabic do
 
   @dictionary [
+    {50, "L"},
     {40, "XL"},
     {10, "X"},
     {9, "IX"},
